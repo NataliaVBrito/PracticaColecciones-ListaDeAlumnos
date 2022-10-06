@@ -9,6 +9,12 @@ public class AlumnoServicio {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     ArrayList<AlumnoEntidad> alumnado = new ArrayList<>();
 
+    /**
+     * Se pide al usuario nombre y apellido del alumno.
+     * Se crea de manera random las notas de Lengua, Matematica y Ciencias.
+     * Se retorna un alumno.
+     * @return 
+     */
     public AlumnoEntidad crearAlumno() {
         AlumnoEntidad alumno = new AlumnoEntidad();
 
@@ -28,6 +34,13 @@ public class AlumnoServicio {
         return alumno;
     }
 
+    /**
+     * Funcion de tipo ArrayList que crea una lista de alumnos.
+     * Se comienza llamando la funcion crearAlumno(), que devuelve un alumno y se lo guarda en la lista "alumnado"(declarada al principio del codigo).
+     * Se consulta si se quiere agregar otro alumno. En caso de "n" u otra tecla se deja de crear alumnos.
+     * Se retorna la lista de alumnos.
+     * @return 
+     */
     public ArrayList<AlumnoEntidad> listaAlumnos() {
         char respuesta = 's';
 
@@ -52,6 +65,9 @@ public class AlumnoServicio {
         return alumnado;
     }
 
+    /**
+     * Se imprime la lista de alumnos registrados
+     */
     public void mostrarLista() {
         System.out.println(" >Esta es la lista de alumnos registrados<");
         System.out.println("Nombre\tApellido\tL M C");
@@ -62,6 +78,12 @@ public class AlumnoServicio {
         System.out.println("");
     }
 
+    /**
+     * Se pide al usuario el nombre del alumno de quien quiere saber el promedio.
+     * En caso de que exista la persona en la lista se calcula el promedio y se imprime.
+     * En caso de que no exista la persona se pregunta si quiere registrarlo. 
+     * Si quiere hacerlo se llama a las funciones listaAlumnos() y calcularPromedio() sino se finaliza el programa
+     */
     public void calcularPromedio() {
         System.out.println("¿De quien quiere saber el promedio? Ingrese el nombre");
         String nomAlumno = leer.next();
