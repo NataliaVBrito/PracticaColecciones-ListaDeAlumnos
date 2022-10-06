@@ -66,7 +66,7 @@ public class AlumnoServicio {
     }
 
     /**
-     * Se imprime la lista de alumnos registrados
+     * Se imprime la lista de alumnos registrados.
      */
     public void mostrarLista() {
         System.out.println(" >Esta es la lista de alumnos registrados<");
